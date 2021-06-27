@@ -1,14 +1,14 @@
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
+
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 app = Flask(__name__)
+
 # LINE 聊天機器人的基本資料
-#聊天機器人的 Chennel access token
-line_bot_api = LineBotApi('CCxxp2eejx8Ov1aZFA1l8ExjIu8p3JKQgAFZxXW4NsV+qDzYIWANU9HII9rNpjEXGBIz1+g1+3fwkfty9npA/SlUwmq70HWTh41NCb5x2Vb/9km2vOlRqUrTswn7oD2/xtiMsI/Tlooxfu3sSakNwAdB04t89/1O/w1cDnyilFU=')
-#聊天機器人的 Channel secret
-handler = WebhookHandler('012eb4ff708b52457f34dd3dec8b40b7')
+line_bot_api = LineBotApi('聊天機器人的 Chennel access token')
+handler = WebhookHandler('聊天機器人的 Channel secret')
 
 # 接收 LINE 的資訊
 @app.route("/callback", methods=['POST'])
